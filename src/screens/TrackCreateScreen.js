@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const TrackCreateScreen = () => {
+const TrackCreateScreen = ({ navigation }) => {
     return (
         <View>
             <Text>TrackCreateScreen</Text>
