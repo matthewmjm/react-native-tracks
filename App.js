@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
@@ -26,21 +25,3 @@ const switchNavigator = createSwitchNavigator({
 });
 
 export default createAppContainer(switchNavigator);
-
-
-
-
-
-
-
-// const App = () => {
-//   return (
-//     <View>
-//       <Text>Open up APP to start working on your app!</Text>
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({});
-
-// export default App;
