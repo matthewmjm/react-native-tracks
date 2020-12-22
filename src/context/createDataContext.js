@@ -4,7 +4,7 @@ export default (reducer, actions, defaultValue) => {
     const Context = React.createContext();
 
     const Provider = ({ children }) => {
-        const [state, setState] = useReducer(reducer, defaultValue);
+        const [state, dispatch] = useReducer(reducer, defaultValue);
 
         const boundActions = {};
         for (let key in actions) {
