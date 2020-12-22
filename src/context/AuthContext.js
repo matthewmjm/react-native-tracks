@@ -9,9 +9,15 @@ const authReducer = (state, action) => {
             return { ...state, errorMessage: action.payload };
         case 'signin':
             return { errorMessage: '', token: action.payload };
+        case 'clear_error_message':
+            return { ...state, errorMessage: '' };
         default:
             return state;
     }
+};
+
+const clearErrorMessage = dispatch => ()=> {
+    dispatch({ type: 'clear_error_message' });
 };
 
 const signup = (dispatch) => {
@@ -43,7 +49,6 @@ const signin = (dispatch) => {
             navigate('TrackList');
             // if signing in fails, we probably need to reflect an error message
         } catch (err) {
-            console.log(`ERROR:  ${err}`);
             dispatch({ type: 'add_error', payload: "Something went wrong with SignIn" });
         }
     };
@@ -59,6 +64,6 @@ const signout = (dispatch) => {
 
 export const { Provider, Context } = createDataContext(
     authReducer,
-    { signin, signup, signout },
+    { signin, signup, signout, clearErrorMessage },
     { token: null, errorMessage: '' }
 );
