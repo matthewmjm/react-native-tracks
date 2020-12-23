@@ -25,6 +25,10 @@ const SignupScreen = ({ navigation }) => {
     );
 };
 
+SignupScreen.navigationOptions = {
+    header: () => false,
+};
+
 
 const styles = StyleSheet.create({
     container: {
