@@ -5,11 +5,13 @@ import { Context as LocationContext } from '../context/LocationContext';
 import useSaveTrack from '../hooks/useSaveTrack';
 
 const TrackForm = () => {
-    const { state: { name, recording, locations }, 
+    const {
+        state: { name, recording, locations }, 
         startRecording, 
-        stopRecording, changeName } 
-        = useContext(LocationContext);
-        const [saveTrack] = useSaveTrack();
+        stopRecording, 
+        changeName 
+    } = useContext(LocationContext);
+    const [saveTrack] = useSaveTrack();
 
     console.log(locations.length);
 
