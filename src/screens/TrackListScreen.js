@@ -3,6 +3,7 @@ import { Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import { NavigationEvents } from 'react-navigation';
 import { ListItem } from 'react-native-elements';
 import { Context as TrackContext } from '../context/TrackContext';
+import Spacer from '../components/Spacer';
 
 const TrackListScreen = ({ navigation }) => {
     const { state, fetchTracks } = useContext(TrackContext);
@@ -10,7 +11,6 @@ const TrackListScreen = ({ navigation }) => {
     return (
         <>
             <NavigationEvents onWillFocus={fetchTracks} />
-            <Text style={{ fontSize: 48 }}>TrackListScreen</Text>
             <FlatList 
                 data={state}
                 keyExtractor={item => item._id}
@@ -20,7 +20,9 @@ const TrackListScreen = ({ navigation }) => {
                                 navigation.navigate('TrackDetail', { _id: item._id })
                             }
                         >
-                            <ListItem.Title>{item.name}</ListItem.Title> 
+                            <Spacer>
+                                <ListItem.Title>{item.name}</ListItem.Title> 
+                            </Spacer>
                         </TouchableOpacity>
                     );
                 }}
@@ -29,9 +31,9 @@ const TrackListScreen = ({ navigation }) => {
     );
 };
 
-// TrackListScreen.navigationOptions = {
-//     header: () => false,
-// };
+TrackListScreen.navigationOptions = {
+    title: 'Tracks',
+};
 
 
 const styles = StyleSheet.create({});
