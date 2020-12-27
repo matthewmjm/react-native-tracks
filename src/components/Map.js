@@ -16,15 +16,17 @@ const Map = () => {
         <MapView 
             style={styles.map}
             initialRegion={{
-                ...currentLocation.coords,
+                // ...currentLocation.coords,
+                speed: 0.18608365952968597,
+                heading: 304.1404623733985,
+                accuracy: 30.591114053984132,
+                altitudeAccuracy: 14.988318214255786,
+                altitude: 2717.5548491094105,
+                longitude: -106.0694037406152,
+                latitude: 39.65830113971167,
                 latitudeDelta: 0.01,
                 longitudeDelta: 0.01
             }}
-            // region={{
-            //     ...currentLocation.coords,
-            //     latitudeDelta: 0.01,
-            //     longitudeDelta: 0.01
-            // }}
         >
             <Circle 
                 center={currentLocation.coords}

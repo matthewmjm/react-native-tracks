@@ -34,10 +34,6 @@ const TrackListScreen = ({ navigation }) => {
 // };
 
 
-const styles = StyleSheet.create({
-    list: {
-        color: 'red'
-    }
-});
+const styles = StyleSheet.create({});
 
 export default TrackListScreen;
