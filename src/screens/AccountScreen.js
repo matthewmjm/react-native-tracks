@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
 import { SafeAreaView } from 'react-navigation';
 import Spacer from '../components/Spacer';
@@ -21,6 +21,8 @@ const AccountScreen = () => {
         </SafeAreaView>
     );
 };
+
+
 
 
 AccountScreen.navigationOptions = {
